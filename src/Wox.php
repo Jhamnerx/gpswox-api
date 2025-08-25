@@ -5,6 +5,9 @@ namespace Gpswox;
 use Gpswox\Exceptions\ApiException;
 use GuzzleHttp\Client as HttpClient;
 use Gpswox\Exceptions\AuthenticationException;
+use Gpswox\Resources\Setup;
+use Gpswox\Resources\Device;
+use Gpswox\Resources\History;
 
 class Wox
 {
@@ -90,5 +93,35 @@ class Wox
         }
 
         throw new AuthenticationException('Login failed: invalid response from server.');
+    }
+
+    /**
+     * Get Setup resource instance
+     *
+     * @return Setup
+     */
+    public function setup(): Setup
+    {
+        return new Setup($this);
+    }
+
+    /**
+     * Get Device resource instance
+     *
+     * @return Device
+     */
+    public function device(): Device
+    {
+        return new Device($this);
+    }
+
+    /**
+     * Get History resource instance
+     *
+     * @return History
+     */
+    public function history(): History
+    {
+        return new History($this);
     }
 }
