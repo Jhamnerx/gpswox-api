@@ -94,4 +94,40 @@ class Device
             'json' => $data,
         ]);
     }
+
+    // 12. Get device groups
+    public function getDeviceGroups(array $params = [])
+    {
+        return $this->client->request('GET', 'api/devices_groups', ['query' => $params]);
+    }
+
+    // 13. Store device group
+    public function storeDeviceGroup(array $data)
+    {
+        return $this->client->request('POST', 'api/devices_groups/store', ['json' => $data]);
+    }
+
+    // 14. Update device group (alternative endpoint)
+    public function updateDeviceGroupById(int $groupId, array $data)
+    {
+        return $this->client->request('PUT', "api/devices_groups/update/{$groupId}", ['json' => $data]);
+    }
+
+    // 15. Get device media
+    public function getDeviceMedia(int $deviceId, array $params = [])
+    {
+        return $this->client->request('GET', "api/devices/{$deviceId}/media", ['query' => $params]);
+    }
+
+    // 16. Get device media file
+    public function getDeviceMediaFile(int $deviceId, string $filename)
+    {
+        return $this->client->request('GET', "api/devices/{$deviceId}/media/file/{$filename}");
+    }
+
+    // 17. Delete device media file
+    public function deleteDeviceMediaFile(int $deviceId, string $filename)
+    {
+        return $this->client->request('DELETE', "api/devices/{$deviceId}/media/file/{$filename}");
+    }
 }

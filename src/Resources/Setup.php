@@ -72,7 +72,7 @@ class Setup
      */
     public function updateSetupData(array $data)
     {
-        return $this->client->request('POST', 'api/edit_setup_data', [
+        return $this->client->request('POST', 'api/edit_setup', [
             'json' => $data,
         ]);
     }
@@ -205,5 +205,29 @@ class Setup
         }
 
         return null;
+    }
+
+    /**
+     * Get user data
+     * Retrieves data to create a user.
+     * 
+     * @param array $params Optional parameters
+     * @return array User creation data
+     */
+    public function getUserData(array $params = [])
+    {
+        return $this->client->request('GET', 'api/get_user_data', ['query' => $params]);
+    }
+
+    /**
+     * Change password
+     * Changes the user's password.
+     * 
+     * @param array $data Password data (old_password, new_password, etc.)
+     * @return array Password change response
+     */
+    public function changePassword(array $data)
+    {
+        return $this->client->request('POST', 'api/change_password', ['json' => $data]);
     }
 }

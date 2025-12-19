@@ -8,6 +8,23 @@ use Gpswox\Exceptions\AuthenticationException;
 use Gpswox\Resources\Setup;
 use Gpswox\Resources\Device;
 use Gpswox\Resources\History;
+use Gpswox\Resources\Alert;
+use Gpswox\Resources\Sensor;
+use Gpswox\Resources\Service;
+use Gpswox\Resources\Geofence;
+use Gpswox\Resources\Route;
+use Gpswox\Resources\Report;
+use Gpswox\Resources\MapIcon;
+use Gpswox\Resources\Driver;
+use Gpswox\Resources\Command;
+use Gpswox\Resources\Event;
+use Gpswox\Resources\CustomEvent;
+use Gpswox\Resources\Task;
+use Gpswox\Resources\GprsTemplate;
+use Gpswox\Resources\SmsTemplate;
+use Gpswox\Resources\Sharing;
+use Gpswox\Resources\Address;
+use Gpswox\Resources\CallAction;
 
 class Wox
 {
@@ -123,5 +140,175 @@ class Wox
     public function history(): History
     {
         return new History($this);
+    }
+
+    /**
+     * Get Alert resource instance
+     *
+     * @return Alert
+     */
+    public function alert(): Alert
+    {
+        return new Alert($this);
+    }
+
+    /**
+     * Get Sensor resource instance
+     *
+     * @return Sensor
+     */
+    public function sensor(): Sensor
+    {
+        return new Sensor($this);
+    }
+
+    /**
+     * Get Service resource instance
+     *
+     * @return Service
+     */
+    public function service(): Service
+    {
+        return new Service($this);
+    }
+
+    /**
+     * Get Geofence resource instance
+     *
+     * @return Geofence
+     */
+    public function geofence(): Geofence
+    {
+        return new Geofence($this);
+    }
+
+    /**
+     * Get Route resource instance
+     *
+     * @return Route
+     */
+    public function route(): Route
+    {
+        return new Route($this);
+    }
+
+    /**
+     * Get Report resource instance
+     *
+     * @return Report
+     */
+    public function report(): Report
+    {
+        return new Report($this);
+    }
+
+    /**
+     * Get MapIcon resource instance
+     *
+     * @return MapIcon
+     */
+    public function mapIcon(): MapIcon
+    {
+        return new MapIcon($this);
+    }
+
+    /**
+     * Get Driver resource instance
+     *
+     * @return Driver
+     */
+    public function driver(): Driver
+    {
+        return new Driver($this);
+    }
+
+    /**
+     * Get Command resource instance
+     *
+     * @return Command
+     */
+    public function command(): Command
+    {
+        return new Command($this);
+    }
+
+    /**
+     * Get Event resource instance
+     *
+     * @return Event
+     */
+    public function event(): Event
+    {
+        return new Event($this);
+    }
+
+    /**
+     * Get CustomEvent resource instance
+     *
+     * @return CustomEvent
+     */
+    public function customEvent(): CustomEvent
+    {
+        return new CustomEvent($this);
+    }
+
+    /**
+     * Get Task resource instance
+     *
+     * @return Task
+     */
+    public function task(): Task
+    {
+        return new Task($this);
+    }
+
+    /**
+     * Get GprsTemplate resource instance
+     *
+     * @return GprsTemplate
+     */
+    public function gprsTemplate(): GprsTemplate
+    {
+        return new GprsTemplate($this);
+    }
+
+    /**
+     * Get SmsTemplate resource instance
+     *
+     * @return SmsTemplate
+     */
+    public function smsTemplate(): SmsTemplate
+    {
+        return new SmsTemplate($this);
+    }
+
+    /**
+     * Get Sharing resource instance
+     *
+     * @return Sharing
+     */
+    public function sharing(): Sharing
+    {
+        return new Sharing($this);
+    }
+
+    /**
+     * Get Address resource instance
+     *
+     * @return Address
+     */
+    public function address(): Address
+    {
+        return new Address($this);
+    }
+
+    /**
+     * Get CallAction resource instance
+     *
+     * @return CallAction
+     */
+    public function callAction(): CallAction
+    {
+        return new CallAction($this);
     }
 }
